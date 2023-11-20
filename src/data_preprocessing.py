@@ -24,7 +24,7 @@ df = pd.read_csv("data/text_samples.csv")
 def calculate_ngrams(text):
     return text
     
-df_1 = df['text'].apply(calculate_ngrams)
+df = df['text'].apply(calculate_ngrams)
 
 
 
