@@ -886,7 +886,121 @@ A key limitation of our research is lack of temporal modeling â€“ many numerical
 temporal scopes. Temporal identification will likely improve
 the effectiveness of distant supervision too."
 Aman Madaan,Analysis of a Convex Formulation for Distant Supervision and Fitting a Custom Kernel,2015,https://madaan.github.io/res/papers/analysis-convex-formulation.pdf,TO DELETE,,
-Aman Madaan,"Occurrence Statistics of Entities, Relations and Types on the Web",2014,,TO DELETE,,
+Aman Madaan,"Occurrence Statistics of Entities, Relations and Types on the Web",2014,https://arxiv.org/pdf/1605.04359v1.pdf,"The problem of collecting reliable estimates of occurrence of entities on the open web forms the premise
+for this report. The models learned for tagging entities cannot be expected to perform well when deployed on the web. This is owing to the severe mismatch in the distributions of such entities on the web
+and in the relatively diminutive training data. In
+this report, we build up the case for maximum mean
+discrepancy for estimation of occurrence statistics of
+entities on the web, taking a review of named entity disambiguation techniques and related concepts
+along the way.","The Internet is a web of mostly unstructured knowledge woven around things. However, these things;
+people, places, technologies, movies, products, books
+etc. are mostly just mentioned by their name, with
+other crucial bits of information about them scattered
+around the point of mention. The cosmic scale of such
+unstructured information has stemmed the dream of
+a semantic web. A web which is aware of the links that make sense, which understands what the user is
+looking for and which is gifted with the intelligence
+of locating the desideratum. There are several pieces
+in the puzzle of the semantic web, this report is an
+attempt to understand one important piece; entities
+on the web and their co occurrence statistics.
+Given a knowledge base such as Yago or Freebase
+consisting of entities and relations, and the Web, our
+goal is to attach reliable estimates of the frequency
+of occurrences on the Web of various entities and relations as singletons, pairs (ordered and unordered)
+in a sentence. The aim is to collect statistics so as
+to be able to assign prior probabilities to the set of
+entities and relations that can co-exist in a sentence
+or a paragraph. These statistics have applications
+in query interpretation and language understanding
+tasks. We can view it as being analogous to statistics
+in relational catalogs. For collecting the statistics about entities on the web,
+we need a method to determine which words in the
+free flowing interminable text are of interest, i.e. represent entities.
+Consider the following sentence : Michael Jordan is a Professor at Berkeley
+We first want to identify all the named entities in
+the text. The task is called named entity recognition
+and is formally defined as :
+Definition 1 (Named entity recognition1
+)
+Named-entity recognition (NER) (also known as
+entity identification and entity extraction) is a
+subtask of information extraction that seeks to locate
+and classify atomic elements in text into predefined
+categories such as the names of persons, organizations, locations, expressions of times, quantities,
+monetary values, percentages, etc.
+but we do not stop at that, we want to link each of
+the named entities thus recognized to a knowledge
+base2
+. Thus, our problem has a 2 step solution :
+• Step 1 : Identify entities
+Michael Jordan PERSON is a professor at
+Berkeley INSTITUTION
+• Step 2 : Link entities to knowledge bases :
+Michael Jordan ENTITY (http://en.
+wikipedia.org/wiki/Michael_I._Jordan)
+is a professor at Berkeley ENTITY (http:
+//en.wikipedia.org/wiki/University_of_
+California,_Berkeley)
+The stanford NER library is s a popular choice for
+recognizing named entities. [5]. In simple terms, disambiguating named entities
+in the unstructured text imparts a structure to
+the document. We need two more data points
+to further appreciate the power that such a tool
+provides to us. The first is the size of the web.
+As of 31st March 2014, there are atleast 1.8 billon
+indexed web pages.[7] The second is the number of
+wikipedia entities. The wikipedia statistics [8] estimate the number of pages to be around 32 million. Yago, a catalog of entities made from wikipedia
+has 12, 727, 222 entities. Imparting structure
+to documents at this magnitude has far reaching
+implications in the information extraction and is a
+bridge towards the hitherto dream of a semantic web.
+It is highly recommended that the reader
+pays http://www.google.co.in/insidesearch/
+features/search/knowledge.html, the google
+knowledge graph project, a visit. The baseline which presents itself given the above
+problem is labeling the corpora with the named entities and then collecting the markings, keeping track
+of which entity was seen when along the way. As intuitive as it seems, the method is unlikely to perform well in the present scenario, owing to the mismatch in
+the training and test distribution [20]. Our training
+data, hand labeled corpora, is paltry in comparison
+with the massive open web, where such systems are
+supposed to be deployed. This is true even for large
+training datasets like the Wikipedia. The observation that we don’t really want the individual labels is a first step towards a better solution.
+There are 3 reported methods for direct estimation
+of class ratios [20]. We are interested in using one of
+them, maximum mean discrepancy (mmd) for solving
+the problem in hand.
+We introduce mmd and propose a formulation for
+determining class ratios in section 5. Section 2 gives an overview of what are knowledge
+bases. This is important since the concept of such
+repositories of structured knowledge is central to the
+report.
+Section 3 begins with an introduction to the problem of named entity disambiguation, the terminology and applications, and goes on to cover the techniques for named entity disambiguation in some detail. We give and overview of the two broad categories
+of disambiguation techniques, Local and global disambiguation.
+Section 4 begins with a discussion on definition of
+Aggregate statistics and some of their applications.
+Finally, in section 5, we discuss Maximum mean discrepancy and its application for estimating the aggregate statistics over entities.","The potential of open web can only be harnessed to
+its full extent by adding structure to it. The process involves creating structured repositories derived from the web that can answer interesting questions
+pertaining to entities that exist on the web.
+Many such smart applications that rely on structured web will rely on frequencies of occurrence of the
+former. The report has been a buildup to achieving
+that. We started by briefing what knowledge bases
+are. In the second part, we introduced the problem
+of disambiguating the mentions of named entities and
+presented solutions roughly spanning last 8 years of
+research in the field.
+In the third part, we elaborated on what is meant
+by aggregate statistics and presented several applications of the same. We presented maximum mean
+discrepancy approach for class ratio estimation via
+an example and discussed the problem formulation.
+We briefly outlined how mmd can be applied for estimating occurrence statistics of entities.
+State of the art approaches for named entity disambiguation brush the figure of 90% accuracy. It
+is thus expected that the focus of the community
+will now shift to making the process of disambiguation faster and integrating the disambiguators in the
+search pipeline. It remains to be seen how approaches
+based on direct estimation of entity occurrence ratios
+perform in comparison with the standard tools, both
+in terms of speed and accuracy."
 Hugo Touvron,Llama 2: Open foundation and fine-tuned chat models,2023,http://arxiv.org/pdf/2307.09288,"In this work, we develop and release Llama 2, a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. Our fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases. Our models outperform open-source chat models on most benchmarks we tested, and based on our human evaluations for helpfulness and safety, may be a suitable substitute for closedsource models. We provide a detailed description of our approach to fine-tuning and safety improvements of Llama 2-Chat in order to enable the community to build on our work and contribute to the responsible development of LLMs.","Large Language Models (LLMs) have shown great promise as highly capable AI assistants that excel in
 complex reasoning tasks requiring expert knowledge across a wide range of fields, including in specialized
 domains such as programming and creative writing. They enable interaction with humans through intuitive
