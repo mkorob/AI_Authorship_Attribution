@@ -1,6 +1,5 @@
-Author,flesch_score,sent_score,lexical_diversity,avg_word_per_sentence,avg_word_length,flesch_score_GPT,sent_score_GPT,lexical_diversity_GPT,avg_word_per_sentence_GPT,avg_word_length_GPT,,,,
-Aman Madaan,30.72,0.47,0.59,25.84,5.1,6.88,0.69,0.67,25.95,5.56,,,0.47,6.88
-Hugo Touvron,30.66,0.53,0.6,25.19,5.06,0,0.64,0.66,24.54,5.8,,,0.53,0
-Timo Schick,32.83,0.45,0.6,31.04,5,3.87,0.67,0.67,26.07,5.77,,,0.45,3.87
-Zhiqing Sun,22.73,0.5,0.58,27.67,5.31,-0.19,0.59,0.63,25.91,5.78,,,0.5,-0.19
-GPT-3.5,2.64,0.65,0.66,25.62,5.73,,,,,,,,,
+Author_org,flesch_score_v2,sent_score,lexical_diversity,avg_word_per_sentence,avg_word_length
+Aman Madaan,32.13,0.69,0.67,25.91,5.55
+Hugo Touvron,25.51,0.64,0.66,24.54,5.80
+Timo Schick,27.15,0.67,0.67,26.07,5.77
+Zhiqing Sun,26.16,0.59,0.63,25.91,5.78
